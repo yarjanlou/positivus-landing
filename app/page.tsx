@@ -22,8 +22,8 @@ export default function Home() {
         <CaseStudies />
         <Process />
         <Team />
+        <Testimonials />
         <ContactUs />
-        {/* <Testimonials /> */}
         <MainFooter />
       </main>
     </div>

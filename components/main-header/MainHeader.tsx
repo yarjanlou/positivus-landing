@@ -26,10 +26,10 @@ const navItems = [
 
 export default function MainHeader() {
   return (
-    <header className="max-w-custom-width mx-auto mb-2 p-4">
-      <div className="flex items-center">
-        <Link href="#" className="flex grow items-center gap-2">
-          <div className="relative size-5">
+    <header className="sticky top-0 z-40 w-full border-b border-gray-200 bg-white p-4 pb-3 md:mb-2 md:border-0 md:p-4">
+      <div className="max-w-custom-width mx-auto flex items-center">
+        <Link href="#" className="flex grow items-center gap-1.5 md:gap-2">
+          <div className="relative size-3 md:size-5">
             <Image
               src="/images/black-logo.png"
               alt="logo"
@@ -37,22 +37,24 @@ export default function MainHeader() {
               className="size-full object-contain"
             />
           </div>
-          <h1 className="text-2xl font-semibold capitalize">positivus</h1>
+          <h1 className="text-xl font-semibold capitalize md:text-2xl">
+            positivus
+          </h1>
         </Link>
-        <nav className="flex items-center gap-8 text-sm">
+        <nav className="hidden items-center gap-8 text-[15px] font-medium md:flex">
           <ul className="flex items-center gap-8">
             {navItems.map((item) => (
               <li key={item.title} className="inline-block">
                 <Link
                   href={item.url}
-                  className="text-dark-secondary capitalize transition-all hover:font-medium"
+                  className="text-dark-secondary capitalize transition-all hover:font-semibold"
                 >
                   {item.title}
                 </Link>
               </li>
             ))}
           </ul>
-          <button className="cursor-pointer rounded-lg border border-neutral-500 bg-white px-4 py-2 text-dark-secondary drop-shadow-xs transition-all hover:drop-shadow-lg">
+          <button className="text-dark-secondary cursor-pointer rounded-lg border border-neutral-500 bg-white px-4 py-2 drop-shadow-xs transition-all hover:drop-shadow-lg">
             Request a quote
           </button>
         </nav>

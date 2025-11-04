@@ -36,7 +36,7 @@ const acoordionData = [
 
 export default function Process() {
   return (
-    <section className="max-w-custom-width mx-auto mb-16 p-4">
+    <section className="max-w-custom-width mx-auto mb-6 md:mb-15 p-4">
       <HeadingBlock title="Our Working Process ">
         Step-by-Step Guide to Achieving Your Business Goals
       </HeadingBlock>

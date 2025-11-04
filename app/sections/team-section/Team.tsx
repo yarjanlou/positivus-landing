@@ -43,20 +43,20 @@ const teamMates = [
 
 export default function Team() {
   return (
-    <section className="max-w-custom-width mx-auto mb-10 p-4">
+    <section className="max-w-custom-width mx-auto mb-5 md:mb-10 p-4">
       <>
         <HeadingBlock title="Team">
           Meet the skilled and experienced team behind our successful digital
           marketing strategies
         </HeadingBlock>
 
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {teamMates.map((item) => (
             <TeamBlock key="item.name" {...item} />
           ))}
         </div>
 
-        <div className="mt-7 flex w-full justify-end">
+        <div className="mt-4 flex w-full justify-end md:mt-7">
           <PrimaryBtn>See all team</PrimaryBtn>
         </div>
       </>

@@ -18,53 +18,62 @@ export default function Accordion({ title, index, children }: AccordionProps) {
   return (
     <motion.div
       layout
-      transition={{ duration: 0.4, ease: "linear" }}
-      className={`mx-auto w-full overflow-hidden rounded-3xl border border-neutral-500 bg-neutral-50 px-4 [box-shadow:0px_3px_0_0_black] md:px-10 ${
-        isOpen ? "bg-primary pb-6" : "bg-light-secondary pb-0"
+      className={`mx-auto w-full overflow-hidden rounded-3xl border border-neutral-800 bg-neutral-50 px-5 [box-shadow:0px_3px_0_0_black] md:px-12 ${
+        isOpen ? "bg-primary" : "bg-light-secondary"
       }`}
     >
-      <button
+      <motion.button
+        layout
         onClick={() => setIsOpen((prev) => !prev)}
         aria-expanded={isOpen}
-        className={`flex w-full cursor-pointer items-center justify-between gap-2 py-8 ${
-          isOpen ? "border-b border-neutral-800" : ""
-        }`}
+        className={`flex w-full cursor-pointer items-center justify-between gap-2 pt-5 pb-4 md:pt-10 md:pb-8`}
       >
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4 md:gap-6">
           {index && (
-            <span className="text-3xl font-semibold">{formatIndex(index)}</span>
+            <span className="text-xl font-semibold md:text-3xl">
+              {formatIndex(index)}
+            </span>
           )}
-          <span className="text-lg font-medium whitespace-nowrap">{title}</span>
+          <span className="text-left text-[15px] font-medium md:text-lg">
+            {title}
+          </span>
         </div>
-        <div
-          className={`flex h-7 w-7 items-center justify-center rounded-full border transition-all duration-300 md:h-9 md:w-9 ${
+        <motion.div
+          layout
+          className={`flex size-6.5 shrink-0 items-center justify-center rounded-full border transition-colors md:size-9 ${
             isOpen
               ? "border-neutral-800 text-neutral-800"
               : "border-neutral-600 text-neutral-600"
           }`}
         >
-          <span>
-            {isOpen ? (
-              <FiPlus className="stroke-3" />
-            ) : (
-              <FiMinus className="stroke-3" />
-            )}
-          </span>
-        </div>
-      </button>
+          {isOpen ? (
+            <FiMinus className="stroke-3" />
+          ) : (
+            <FiPlus className="stroke-3" />
+          )}
+        </motion.div>
+      </motion.button>
 
       <AnimatePresence initial={false}>
         {isOpen && (
-          <motion.p
+          <motion.div
             key="content"
-            initial={{ opacity: 0, height: 0, y: -20 }}
-            animate={{ opacity: 1, height: "auto", y: 0 }}
-            exit={{ opacity: 0, height: 0, y: -20 }}
-            transition={{ duration: 0.4, ease: "linear" }}
-            className="mt-4 w-7/8 text-justify text-xs leading-7.5 md:text-[13px]"
+            initial="collapsed"
+            animate="expanded"
+            exit="collapsed"
+            variants={{
+              expanded: { opacity: 1, height: "auto" },
+              collapsed: { opacity: 0, height: 0 },
+            }}
+            transition={{ duration: 0.4, ease: [0.33, 1, 0.68, 1] }} // smoother easing
+            className="overflow-hidden"
           >
-            {children}
-          </motion.p>
+            <div
+              className={`py-4 text-xs leading-5 md:py-7 md:text-sm md:leading-7.5 ${isOpen ? "border-t border-neutral-500" : ""}`}
+            >
+              <p className="w-7/8">{children}</p>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </motion.div>

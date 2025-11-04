@@ -19,10 +19,10 @@ export default function ServiceCard({
 }>) {
   return (
     <div
-      className={`flex justify-between rounded-4xl p-10 ${bgColor} border [box-shadow:0px_5px_0_0_black] ${bgColor === "bg-dark-secondary" ? "border-dark-secondary" : "border-neutral-500"}`}
+      className={`flex justify-between rounded-4xl px-6 py-10 md:p-10 ${bgColor} border [box-shadow:0px_5px_0_0_black] ${bgColor === "bg-dark-secondary" ? "border-dark-secondary" : "border-neutral-500"}`}
     >
-      <div className="flex flex-col justify-between">
-        <h4 className="text-xl font-bold text-neutral-800">
+      <div className="flex flex-col justify-between gap-10">
+        <h4 className="text-lg font-bold text-neutral-800 md:text-2xl">
           <span className={`${textColor} inline-block rounded-md px-1.5`}>
             {titlePart1}
           </span>
@@ -31,19 +31,19 @@ export default function ServiceCard({
             {titlePart2}
           </span>
         </h4>
-        <Link href={link} className="group flex items-center gap-4">
+        <Link href={link} className="group flex items-center gap-2.5 md:gap-4">
           {/* bg-neutral-100 text-neutral-500 */}
           <span
-            className={`inline-flex h-6.5 w-6.5 items-center justify-center rounded-full ${
+            className={`inline-flex size-5.5 items-center justify-center rounded-full md:size-6.5 ${
               bgColor === "bg-dark-secondary"
                 ? "bg-neutral-100"
                 : "bg-dark-secondary text-neutral-100"
             }`}
           >
-            <FiArrowUpRight className="inline-block stroke-3 transition-all group-hover:translate-x-[1.6px] group-hover:-translate-y-[1.3px]" />
+            <FiArrowUpRight className="inline-block size-3 stroke-3 transition-all group-hover:translate-x-[1.6px] group-hover:-translate-y-[1.3px] md:size-4" />
           </span>
           <span
-            className={`text-[15px] font-medium ${
+            className={`text-sm font-medium md:text-base ${
               bgColor === "bg-dark-secondary"
                 ? "text-neutral-100"
                 : "text-dark-secondary"
@@ -53,7 +53,7 @@ export default function ServiceCard({
           </span>
         </Link>
       </div>
-      <div className="relative aspect-square w-[200px]">
+      <div className="relative aspect-square w-[100px] md:w-[200px]">
         <Image
           src={imageUrl}
           alt={titlePart1 + " " + titlePart2}

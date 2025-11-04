@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import FormInput from "../ui/FormInput";
+import Socials from "./Socials";
 
 const footeLinks = [
   { text: "about us", url: "#" },
@@ -11,19 +11,13 @@ const footeLinks = [
   { text: "blog", url: "#" },
 ];
 
-const socialIcons = [
-  { icon: <FaLinkedinIn className="size-3.5" />, url: "#" },
-  { icon: <FaFacebookF className="size-3.5" />, url: "#" },
-  { icon: <FaTwitter className="size-3.5" />, url: "#" },
-];
-
 export default function MainFooter() {
   return (
     <footer className="max-w-custom-width mx-auto p-4 pb-0 text-neutral-200">
-      <div className="bg-dark-secondary w-full rounded-t-3xl px-12 pt-10 pb-8">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="relative aspect-square w-4">
+      <div className="bg-dark-secondary w-full rounded-t-3xl px-8 pt-8 pb-6 md:px-12 md:pt-10 md:pb-8">
+        <div className="flex flex-col items-center md:flex-row md:justify-between">
+          <div className="flex items-center gap-1 md:gap-2">
+            <div className="relative aspect-square w-3.5 md:w-4">
               <Image
                 src="/images/white-logo.png"
                 alt="logo"
@@ -33,13 +27,13 @@ export default function MainFooter() {
             </div>
             <h5 className="text-lg font-semibold">Positivus</h5>
           </div>
-          <div className="grow">
-            <ul className="flex items-center justify-center gap-7">
+          <div className="mt-2 md:mt-0 md:grow">
+            <ul className="flex flex-col items-center gap-1.5 md:flex-row md:justify-center md:gap-7">
               {footeLinks.map((item) => (
-                <li>
+                <li key={item.text}>
                   <Link
                     href={item.url}
-                    className="text-[13px] font-light capitalize underline"
+                    className="md:text-[13px] text-xs font-light capitalize underline"
                   >
                     {item.text}
                   </Link>
@@ -47,19 +41,12 @@ export default function MainFooter() {
               ))}
             </ul>
           </div>
-          <div className="flex items-center gap-3">
-            {socialIcons.map((item) => (
-              <Link
-                href={item.url}
-                className="flex size-5.5 items-center justify-center rounded-full bg-white p-1 text-neutral-900"
-              >
-                {item.icon}
-              </Link>
-            ))}
+          <div className="hidden md:block">
+            <Socials />
           </div>
         </div>
-        <div className="flex items-end justify-between border-b border-neutral-400 pt-10 pb-9">
-          <div className="space-y-3 text-xs">
+        <div className="flex flex-col items-center gap-8 border-b border-neutral-400 py-7 md:flex-col md:items-end md:justify-between md:pt-10 md:pb-9">
+          <div className="space-y-3 text-center text-xs md:text-left">
             <h6 className="bg-primary text-dark-secondary mb-4.5 inline-block rounded-sm px-1 text-sm font-semibold">
               Contact us:
             </h6>
@@ -71,20 +58,23 @@ export default function MainFooter() {
               Moonstone City, Stardust State 12345
             </p>
           </div>
-          <div className="rounded-lg bg-[#292A32] px-6 py-9">
-            <form action="" className="space-x-3">
+          <div className="rounded-lg bg-[#292A32] p-5 md:px-6 md:py-9">
+            <form
+              action=""
+              className="space-y-3 text-[13px] md:space-x-3 md:text-sm"
+            >
               <input
                 type="text"
                 placeholder="Email"
-                className="rounded-lg border border-white bg-[#292A32] px-4 py-2.5 text-sm outline-0 placeholder:font-light placeholder:text-white"
+                className="w-full rounded-lg border border-white bg-[#292A32] px-4 py-2 outline-0 placeholder:font-light placeholder:text-white md:w-auto md:py-2.5"
               />
-              <button className="bg-primary rounded-lg px-5 py-2.5 text-sm font-medium text-neutral-900">
+              <button className="bg-primary w-full rounded-lg px-5 py-2 font-medium text-neutral-900 md:w-auto md:py-2.5">
                 Subscribe to news
               </button>
             </form>
           </div>
         </div>
-        <div className="flex items-center gap-6 pt-8 text-[13px]">
+        <div className="flex flex-col items-center gap-2 pt-5 text-xs md:flex-row md:gap-6 md:pt-8 md:text-[13px]">
           <p>&copy; 2025 Positivus. All Rights Reserved.</p>
           <Link href="#" className="underline">
             Privacy Policy

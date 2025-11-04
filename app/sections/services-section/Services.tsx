@@ -3,12 +3,12 @@ import ServiceCard from "./ServiceCard";
 
 export default function Services() {
   return (
-    <section className="max-w-custom-width mx-auto mb-15 p-4">
+    <section className="max-w-custom-width mx-auto mb-6 p-4 md:mb-15">
       <HeadingBlock title="Services">
         At our digital marketing agency, we offer a range of services to help
         businesses grow and succeed online. These services include:
       </HeadingBlock>
-      <div className="grid grid-cols-2 gap-x-10 gap-y-10">
+      <div className="grid grid-cols-1 gap-x-10 gap-y-5 md:grid-cols-2 md:gap-y-10">
         <ServiceCard
           titlePart1="Search engine"
           titlePart2="optimization"
