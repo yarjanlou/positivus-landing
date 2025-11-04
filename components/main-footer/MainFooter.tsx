@@ -33,7 +33,7 @@ export default function MainFooter() {
                 <li key={item.text}>
                   <Link
                     href={item.url}
-                    className="md:text-[13px] text-xs font-light capitalize underline"
+                    className="text-xs font-light capitalize underline md:text-[13px]"
                   >
                     {item.text}
                   </Link>
@@ -45,7 +45,7 @@ export default function MainFooter() {
             <Socials />
           </div>
         </div>
-        <div className="flex flex-col items-center gap-8 border-b border-neutral-400 py-7 md:flex-col md:items-end md:justify-between md:pt-10 md:pb-9">
+        <div className="flex flex-col items-center gap-8 border-b border-neutral-400 py-7 md:flex-row md:items-end md:justify-between md:pt-10 md:pb-9">
           <div className="space-y-3 text-center text-xs md:text-left">
             <h6 className="bg-primary text-dark-secondary mb-4.5 inline-block rounded-sm px-1 text-sm font-semibold">
               Contact us:
