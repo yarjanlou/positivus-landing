@@ -5,7 +5,7 @@ Page** designed in Figma. The project is built using **Next.js**,
 **Tailwind CSS**, and **Framer Motion** to deliver a modern, responsive,
 and animated landing experience.
 
-![App Preview](./public/preview.png)
+![App Preview](./public/images/preview.png)
 
 ## 🚀 Tech Stack
 
