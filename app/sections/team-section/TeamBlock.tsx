@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedinIn } from "react-icons/fa";
-import { TfiLinkedin } from "react-icons/tfi";
 
 export default function TeamBlock({
   name,

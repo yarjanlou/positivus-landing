@@ -16,7 +16,7 @@ export default function CaseStudyBlock({
       >
         <span className="text-sm md:text-base">Learn more</span>
         <span>
-          <FiArrowUpRight className="stroke-[2.5] group-hover:translate-x-[1.6px] group-hover:-translate-y-[1.3px] md:text-lg transition-all" />
+          <FiArrowUpRight className="stroke-[2.5] transition-all group-hover:translate-x-[1.6px] group-hover:-translate-y-[1.3px] md:text-lg" />
         </span>
       </Link>
     </div>

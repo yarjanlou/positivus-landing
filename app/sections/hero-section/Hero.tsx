@@ -8,7 +8,7 @@ export default function Hero() {
         <h2 className="text-4xl leading-12 font-semibold md:hidden">
           Navigating the digital landscape for success
         </h2>
-        <div className="order-last shrink space-y-3.5 md:space-y-4 md:order-first md:w-1/2 md:pt-4">
+        <div className="order-last shrink space-y-3.5 md:order-first md:w-1/2 md:space-y-4 md:pt-4">
           <h2 className="hidden text-5xl leading-16 font-semibold md:block">
             Navigating the digital landscape for success
           </h2>
@@ -22,7 +22,7 @@ export default function Hero() {
         <div className="grow"></div>
         <div className="relative aspect-square w-full md:h-[440px] md:w-1/2">
           <Image
-            src="/images/hero-illustration.png"
+            src="/images/hero-Illustration.png"
             alt="hero-illustration"
             fill
             className="size-full object-contain"
