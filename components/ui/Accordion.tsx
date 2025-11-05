@@ -26,7 +26,7 @@ export default function Accordion({ title, index, children }: AccordionProps) {
         layout
         onClick={() => setIsOpen((prev) => !prev)}
         aria-expanded={isOpen}
-        className={`flex w-full cursor-pointer items-center justify-between gap-2 pt-5 pb-4 md:pt-10 md:pb-8`}
+        className={`flex w-full cursor-pointer items-center justify-between gap-2 py-5 md:pt-10 md:pb-8`}
       >
         <div className="flex items-center gap-4 md:gap-6">
           {index && (
@@ -65,7 +65,7 @@ export default function Accordion({ title, index, children }: AccordionProps) {
               expanded: { opacity: 1, height: "auto" },
               collapsed: { opacity: 0, height: 0 },
             }}
-            transition={{ duration: 0.4, ease: [0.33, 1, 0.68, 1] }} // smoother easing
+            transition={{ duration: 0.4, ease: [0.33, 1, 0.68, 1] }}
             className="overflow-hidden"
           >
             <div
