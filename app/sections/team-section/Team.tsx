@@ -50,7 +50,7 @@ export default function Team() {
           marketing strategies
         </HeadingBlock>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 md:gap-8 md:grid-cols-3">
           {teamMates.map((item) => (
             <TeamBlock key="item.name" {...item} />
           ))}

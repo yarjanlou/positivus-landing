@@ -36,11 +36,11 @@ const acoordionData = [
 
 export default function Process() {
   return (
-    <section className="max-w-custom-width mx-auto mb-6 md:mb-15 p-4">
+    <section className="max-w-custom-width mx-auto mb-6 p-4 md:mb-15">
       <HeadingBlock title="Our Working Process ">
         Step-by-Step Guide to Achieving Your Business Goals
       </HeadingBlock>
-      <div className="w-full space-y-4.5">
+      <div className="w-full space-y-3 md:space-y-4.5">
         {acoordionData.map((item, index) => (
           <Accordion key={index} index={index + 1} title={item.title}>
             {item.content}

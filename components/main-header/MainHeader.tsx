@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import HamburgerMenu from "./HamburgerMenu";
 
 const navItems = [
   {
@@ -26,7 +27,7 @@ const navItems = [
 
 export default function MainHeader() {
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-gray-200 bg-white p-4 pb-3 md:mb-2 md:border-0 md:p-4">
+    <header className="sticky top-0 z-40 w-full border-b border-gray-200 bg-white p-4 pb-3 md:relative md:mb-2 md:border-0 md:p-4">
       <div className="max-w-custom-width mx-auto flex items-center">
         <Link href="#" className="flex grow items-center gap-1.5 md:gap-2">
           <div className="relative size-3 md:size-5">
@@ -47,17 +48,18 @@ export default function MainHeader() {
               <li key={item.title} className="inline-block">
                 <Link
                   href={item.url}
-                  className="text-dark-secondary capitalize transition-all hover:font-semibold"
+                  className="text-dark-secondary capitalize transition-all hover:text-neutral-600"
                 >
                   {item.title}
                 </Link>
               </li>
             ))}
           </ul>
-          <button className="text-dark-secondary cursor-pointer rounded-lg border border-neutral-500 bg-white px-4 py-2 drop-shadow-xs transition-all hover:drop-shadow-lg">
+          <button className="text-dark-secondary cursor-pointer rounded-lg border border-neutral-500 bg-white px-4 py-2 drop-shadow-xs transition-all duration-200 hover:drop-shadow-lg">
             Request a quote
           </button>
         </nav>
+        <HamburgerMenu />
       </div>
     </header>
   );

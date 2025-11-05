@@ -17,6 +17,8 @@ const logos = [
   { icon: <Zoom className="w-18 sm:w-22" />, url: "#" },
 ];
 
+const reversedLogos = [...logos].reverse();
+
 export default function TrustedByAnimated() {
   return (
     <section className="max-w-custom-width mx-auto px-4 py-6 md:pb-16">
@@ -31,11 +33,12 @@ export default function TrustedByAnimated() {
                 repeat: Infinity,
                 repeatType: "loop",
                 duration: 20,
+                repeatDelay: 0,
                 ease: "linear",
               },
             }}
           >
-            {[...logos, ...logos].map((item, index) => (
+            {[...logos, ...logos, ...logos].map((item, index) => (
               <a
                 key={`row1-${index}`}
                 href={item.url}
@@ -52,26 +55,29 @@ export default function TrustedByAnimated() {
         <div className="md:hidden">
           <motion.div
             className="flex whitespace-nowrap"
-            animate={{ x: ["-50%", "0%"] }} // Opposite direction
+            animate={{ x: ["-50%", "0%"] }}
             transition={{
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 22, // Slightly different speed
+                duration: 22,
+                repeatDelay: 0,
                 ease: "linear",
               },
             }}
           >
-            {[...logos, ...logos].map((item, index) => (
-              <a
-                key={`row2-${index}`}
-                href={item.url}
-                className="px-4 grayscale transition hover:grayscale-0 md:px-6"
-                aria-label={`Visit ${item.url}`}
-              >
-                {item.icon}
-              </a>
-            ))}
+            {[...reversedLogos, ...reversedLogos, ...reversedLogos].map(
+              (item, index) => (
+                <a
+                  key={`row2-${index}`}
+                  href={item.url}
+                  className="px-4 grayscale transition hover:grayscale-0 md:px-6"
+                  aria-label={`Visit ${item.url}`}
+                >
+                  {item.icon}
+                </a>
+              ),
+            )}
           </motion.div>
         </div>
       </div>

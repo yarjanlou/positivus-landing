@@ -12,11 +12,11 @@ export default function CaseStudyBlock({
       </p>
       <Link
         href={url}
-        className="text-primary absolute bottom-8 left-6 flex items-center gap-2 text-[15px] font-semibold md:bottom-0 md:left-14"
+        className="text-primary group absolute bottom-8 left-6 flex items-center gap-2 text-[15px] font-semibold md:bottom-0 md:left-14"
       >
         <span className="text-sm md:text-base">Learn more</span>
         <span>
-          <FiArrowUpRight className="stroke-[2.5] md:text-lg" />
+          <FiArrowUpRight className="stroke-[2.5] group-hover:translate-x-[1.6px] group-hover:-translate-y-[1.3px] md:text-lg transition-all" />
         </span>
       </Link>
     </div>

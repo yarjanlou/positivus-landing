@@ -27,14 +27,14 @@ export default function TestimonialBlock({
             fill
             className="size-full object-contain md:hidden"
           />
-          <p className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-[57%] px-8 text-sm font-medium md:-translate-y-[60%]">
+          <p className="absolute top-15 w-full px-8 text-[13px] font-medium md:top-20 md:text-sm">
             {desc}
           </p>
         </div>
         <div className="relative w-full">
           <div className="absolute left-[12%] w-full -translate-y-4 md:left-[29%] md:-translate-y-6">
             <p className="text-primary font-bold">{name}</p>
-            <p className="text-sm font-medium">{position}</p>
+            <p className="text-[13px] font-medium md:text-sm">{position}</p>
           </div>
         </div>
       </div>

@@ -73,6 +73,9 @@ export default function MainFooter() {
               </button>
             </form>
           </div>
+          <div className="md:hidden">
+            <Socials />
+          </div>
         </div>
         <div className="flex flex-col items-center gap-2 pt-5 text-xs md:flex-row md:gap-6 md:pt-8 md:text-[13px]">
           <p>&copy; 2025 Positivus. All Rights Reserved.</p>
